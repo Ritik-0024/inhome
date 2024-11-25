@@ -35,7 +35,7 @@ const App = () => {
         <main className="flex-1 p-8 bg-[#f7f6f2]">
           {activeSection === "home" ? (
             <>
-              <h1 className="text-3xl font-semibold mb-6">How can we help you today?</h1>
+              <h1 className="text-3xl font-semibold mb-6 w-full p-2 text-center">How can we help you today?</h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Cards */}
                 <Card

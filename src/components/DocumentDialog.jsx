@@ -41,14 +41,18 @@ const DocumentDialog = ({ isOpen, onClose }) => {
       field: "comments"
     }
   ];
-
+  const handleBack = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
   const handleContinue = () => {
     setStep(step + 1);
   };
   const handleQuestionClick = (id) => {
     setExpandedQuestion(expandedQuestion === id ? null : id);
   };
-
+  
   const handleAnswerChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
@@ -181,7 +185,8 @@ const DocumentDialog = ({ isOpen, onClose }) => {
         )}
         {/* Footer */}
         <div className="flex justify-between items-center mt-8">
-          <button className="text-blue-600">Show more</button>
+          <button  onClick={handleBack}
+            className={`text-indigo-600 flex items-center ${step === 1 ? 'invisible' : ''}`}>Back</button>
           <button
             onClick={handleContinue}
             className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800"
